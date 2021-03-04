@@ -76,6 +76,10 @@
             </figure>
           </div>
           <!-- Gallery -->
+
+          <progress class="progress is-small is-primary" max="100" id="Loading">15%</progress>
+
+
           <div class="columns is-variable is-1">
             <div class="column" id="api1">
             </div>
@@ -108,9 +112,22 @@
   </footer>
 
   <script>
+    var loading = document.getElementById('Loading');
+
+
+    function Loading () {
+      loading.style.display = 'block';
+    }
+
+    function HideLoading () {
+      loading.style.display = 'None';
+    }
+
+    
     fetch('https://raw.githubusercontent.com/KaliemSB/Database/main/fotos.json')
     .then(res => res.json())
     .then((res) => {
+        HideLoading()
         const Fotos = res.Fotos;
 
         var Coluna1 = Fotos.Coluna1;
