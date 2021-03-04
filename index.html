@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="language" content="pt-BR">
+  <title>Memorias</title>
+  <meta name="description"
+    content="Website feito para funcionar como uma galeria para guardar fotos dos nossos momentos juntos.">
+  <meta name="robots" content="all">
+  <meta name="author" content="Mycael Dias">
+  <meta name="keywords" content="galeria, memorias">
+  <meta property="og:type" content="page">
+  <meta property="og:url" content="https://memorias.vercel.app">
+  <meta property="og:title" content="">
+  <meta property="og:image" content="https://i.imgur.com/udChqty.png">
+  <meta property="og:description"
+    content="Website feito para funcionar como uma galeria para guardar fotos dos nossos momentos juntos.">
+  <meta property="article:author" content="Mycael Dias">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@Memorias">
+  <meta name="twitter:title" content="">
+      
+  <meta name="twitter:creator" content="@ImycaelI">
+  <meta name="twitter:description"
+    content="Website feito para funcionar como uma galeria para guardar fotos dos nossos momentos juntos.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memorias</title>
+  <link rel="icon" href="/assets/favicon.svg" sizes="any" type="image/svg+xml" />
+  <link rel="stylesheet" href="/styles/bulma.min.css" />
+  <link rel="stylesheet" href="/styles/index.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <meta name="language" content="pt-BR">
+   <title>Memorias</title>
+   
+  <meta name="description"
+    content="Website feito para funcionar como uma galeria para guardar fotos dos nossos momentos juntos.">
+   
+  <meta name="robots" content="all">
+  <meta name="author" content="Mycael Dias">
+  <meta name="keywords" content="galeria, memorias">
+   
+  <meta property="og:type" content="page">
+   
+  <meta property="og:url" content="https://memorias.vercel.app">
+   
+  <meta property="og:title" content="">
+   
+  <meta property="og:image" content="https://i.imgur.com/udChqty.png">
+   
+  <meta property="og:description"
+    content="Website feito para funcionar como uma galeria para guardar fotos dos nossos momentos juntos.">
+  <meta property="article:author" content="Mycael Dias">
+  <meta name="twitter:card" content="summary_large_image">
+   
+  <meta name="twitter:site" content="@Memorias">
+   
+  <meta name="twitter:title" content="">
+   
+  <meta name="twitter:creator" content="@ImycaelI">
+   
+  <meta name="twitter:description"
+    content="Website feito para funcionar como uma galeria para guardar fotos dos nossos momentos juntos.">
+</head>
+
+<body>
+  <main>
+    <!-- Main Section -->
+    <section class="section">
+      <div class="container has-text-centered">
+        <header class="section-header">
+          <!-- Container logo -->
+          <div class="container" id="clogo">
+            <figure class="image">
+              <img class="is-rounded" id="logo" src="/assets/logo.png" alt="" />
+            </figure>
+          </div>
+          <!-- Gallery -->
+          <div class="columns is-variable is-1">
+            <div class="column" id="api1">
+            </div>
+
+            <div class="column" id="api2">
+            </div>
+
+            <div class="column" id="api3">
+            </div>
+
+            <div class="column" id="api4">
+            </div>
+
+          </div>
+        </header>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        Made with <i class="material-icons" id="icon">favorite_border</i> by
+        <a href="https://github.com/KaliemSB?tab=repositories">Kaliem</a>
+        under
+        <a href="https://raw.githubusercontent.com/KaliemSB/Memorias/main/LICENSE">GNU license</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    fetch('https://raw.githubusercontent.com/KaliemSB/Database/main/fotos.json')
+    .then(res => res.json())
+    .then((res) => {
+        const Fotos = res.Fotos;
+
+        var Coluna1 = Fotos.Coluna1;
+        var Coluna2 = Fotos.Coluna2;
+        var Coluna3 = Fotos.Coluna3;
+        var Coluna4 = Fotos.Coluna4;
+
+        for (var i = 0; i < Coluna1.length; i++) {
+            var div = document.getElementById('api1')
+            div.innerHTML += `<img src="${Fotos.Coluna1[i]}" alt="Foto"/>`
+        }
+
+        for (var i = 0; i < Coluna2.length; i++) {
+            var div = document.getElementById('api2')
+            div.innerHTML += `<img src="${Fotos.Coluna1[i]}" alt="Foto"/>`
+        }
+
+        for (var i = 0; i < Coluna3.length; i++) {
+            var div = document.getElementById('api3')
+            div.innerHTML += `<img src="${Fotos.Coluna1[i]}" alt="Foto"/>`
+        }
+
+        for (var i = 0; i < Coluna4.length; i++) {
+            var div = document.getElementById('api4')
+            div.innerHTML += `<img src="${Fotos.Coluna1[i]}" alt="Foto"/>`
+        }
+    });
+  </script>
+</body>
+
+</html>
